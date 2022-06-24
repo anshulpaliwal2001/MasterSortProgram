@@ -58,7 +58,7 @@ public:
                 {
                     if (Array[j] > Array[j + 1])
                         swapElements(j, j + 1);
-                    cout << endl << "Pass " << counter << " : ";
+                    cout << endl << "    Pass " << counter << "    : ";
                     showArray(3);
                     cout << endl;
                     counter++;
@@ -84,7 +84,7 @@ public:
                 j--;
             }
             Array[j + 1] = current;
-            cout << endl << "Pass " << counter << " : ";
+            cout << endl << "    Pass " << counter << "    : ";
             showArray(3);
             cout << endl;
             counter++;
@@ -108,9 +108,10 @@ public:
                     minIndex = j+1;
             }
             swapElements(i,minIndex);
-            cout << endl << "Pass " << counter << " : ";
+
+            cout << endl << "    Pass " << counter << "    : ";
             showArray(3);
-            cout << endl;
+
             counter++;
         }
 
