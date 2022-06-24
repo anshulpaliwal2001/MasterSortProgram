@@ -82,7 +82,6 @@ public:
             while (j >= 0 && Array[j] > current) {
                 Array[j + 1] = Array[j];
                 j--;
-
             }
             Array[j + 1] = current;
             cout << endl << "Pass " << counter << " : ";
@@ -94,11 +93,36 @@ public:
 
 };
 
+class SelectionSort : public Sorting
+{
+public:
+    SelectionSort(int *array, int size) : Sorting(array, size) {}
+
+    void sort()
+    {
+        int counter = 1;
+        for (int i = 0; i < size; ++i) {
+            int minIndex = i;
+            for (int j = i+1; j < size-1; ++j) {
+                if(Array[minIndex] > Array[j+1])
+                    minIndex = j+1;
+            }
+            swapElements(i,minIndex);
+            cout << endl << "Pass " << counter << " : ";
+            showArray(3);
+            cout << endl;
+            counter++;
+        }
+
+    }
+
+};
+
 int main() {
 
     int arr[] = {55, 48, 71, 2, 45, 78, 23, 15};
     int size = sizeof(arr) / sizeof(int);
-    InsertionSort b1(arr, size);
+    SelectionSort b1(arr, size);
     b1.showArray(1);
     b1.sort();
     b1.showArray(2);
